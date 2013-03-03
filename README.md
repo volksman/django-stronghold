@@ -84,14 +84,16 @@ Default setting when debug == True:
 STRONGHOLD_PUBLIC_URLS = (
     r'^%s.+$' % settings.STATIC_URL,
     r'^%s.+$' % settings.MEDIA_URL,
-    r'^%s$' % settings.LOGIN_URL,
-    r'^%s$' % settings.LOGOUT_URL
+    login,
+    logout
 )
-
-In debug mode, we declare the common urls for your Static files, media and login/login public.
-
 ```
 
+In debug mode, we declare the common urls for your Static files, media and login/login public.  Login and logout are determined by testing for (in priority): settings.LOGIN_URL or reverse('login').
+
+##Templates
+
+Basic login/logout templates for django.contrib.auth are provided.
 
 ##Contribute
 
